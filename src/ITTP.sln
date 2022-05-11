@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITTP.Server", "ITTP.Server\ITTP.Server.csproj", "{8BAF47B2-14BD-407E-B07D-D26059E15947}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITTP.Core", "ITTP.Core\ITTP.Core.csproj", "{29C80508-A1C2-49EE-9756-E2C42EBA1FE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{133B085F-3E70-44BC-AF4F-0E4F9D24FAF2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITTP.Database.Context", "Database\ITTP.Database.Context\ITTP.Database.Context.csproj", "{A8E0B725-FB48-4FF3-B7B1-F3313A77C25E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITTP.Database.Models", "Database\ITTP.Database.Models\ITTP.Database.Models.csproj", "{35285E26-EC2F-4745-8FD0-75E221D02565}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITTP.Database.Repositories", "Database\ITTP.Database.Repositories\ITTP.Database.Repositories.csproj", "{4FE82FEF-559B-4B9A-A62E-4A74E01AF9FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BAF47B2-14BD-407E-B07D-D26059E15947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BAF47B2-14BD-407E-B07D-D26059E15947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BAF47B2-14BD-407E-B07D-D26059E15947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BAF47B2-14BD-407E-B07D-D26059E15947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C80508-A1C2-49EE-9756-E2C42EBA1FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C80508-A1C2-49EE-9756-E2C42EBA1FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C80508-A1C2-49EE-9756-E2C42EBA1FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C80508-A1C2-49EE-9756-E2C42EBA1FE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E0B725-FB48-4FF3-B7B1-F3313A77C25E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E0B725-FB48-4FF3-B7B1-F3313A77C25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E0B725-FB48-4FF3-B7B1-F3313A77C25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E0B725-FB48-4FF3-B7B1-F3313A77C25E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35285E26-EC2F-4745-8FD0-75E221D02565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35285E26-EC2F-4745-8FD0-75E221D02565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35285E26-EC2F-4745-8FD0-75E221D02565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35285E26-EC2F-4745-8FD0-75E221D02565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FE82FEF-559B-4B9A-A62E-4A74E01AF9FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FE82FEF-559B-4B9A-A62E-4A74E01AF9FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FE82FEF-559B-4B9A-A62E-4A74E01AF9FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FE82FEF-559B-4B9A-A62E-4A74E01AF9FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A8E0B725-FB48-4FF3-B7B1-F3313A77C25E} = {133B085F-3E70-44BC-AF4F-0E4F9D24FAF2}
+		{35285E26-EC2F-4745-8FD0-75E221D02565} = {133B085F-3E70-44BC-AF4F-0E4F9D24FAF2}
+		{4FE82FEF-559B-4B9A-A62E-4A74E01AF9FE} = {133B085F-3E70-44BC-AF4F-0E4F9D24FAF2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E498C609-CEDE-4F47-ACED-77684D535F05}
+	EndGlobalSection
+EndGlobal
