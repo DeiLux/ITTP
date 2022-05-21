@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Database\ITTP.Database.Context\ITTP.Database.Context.csproj" />
+    <ProjectReference Include="..\Database\ITTP.Database.Repositories\ITTP.Database.Repositories.csproj" />
+    <ProjectReference Include="..\Datatransfer\ITTP.Datatransfer.HttpDto\ITTP.Datatransfer.HttpDto.csproj" />
+    <ProjectReference Include="..\ITTP.Core\ITTP.Core.csproj" />
+    <ProjectReference Include="..\Services\ITTP.Services.AuthService\ITTP.Services.AuthService.csproj" />
+    <ProjectReference Include="..\Services\ITTP.Services.UserService\ITTP.Services.UserService.csproj" />
+  </ItemGroup>
+
+</Project>
