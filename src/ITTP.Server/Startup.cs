@@ -58,7 +58,7 @@ namespace ITTP.Server
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "QuartzPlayground.HttpServer",
+                    Title = "ITTP.Server",
                 });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
