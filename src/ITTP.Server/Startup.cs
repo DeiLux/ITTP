@@ -34,8 +34,11 @@ namespace ITTP.Server
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IUserService, UserService>();
 
-            var authSection = Configuration.GetSection("Security").Get<AuthConfiguration>();
-            services.AddTransient<IAuthConfiguration>(serviceProvider => authSection);
+            services.AddTransient<IAuthConfiguration>(serviceProvider => 
+                Configuration.GetSection("Security").Get<AuthConfiguration>());
+            services.AddDbContext<NpgSqlContext>(options =>
+                options.UseNpgsql(Environment.GetEnvironmentVariable("DB_CONNECTION_STRING") ??
+                Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers()
                 .AddNewtonsoftJson(options =>
@@ -45,20 +48,14 @@ namespace ITTP.Server
                         AllowIntegerValues = false
                     });
                 });
-
+            
             services.AddSwaggerGenNewtonsoftSupport();
-
-            services.AddControllers();
-            services.AddDbContext<NpgSqlContext>(options =>
-                options.UseNpgsql(Environment.GetEnvironmentVariable("DB_CONNECTION_STRING") ??
-                Configuration.GetConnectionString("DefaultConnection")));
-
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "QuartzPlayground.HttpServer",
+                    Title = "ITTP.Server",
                 });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
@@ -78,7 +75,6 @@ namespace ITTP.Server
                         }, new List<string>()
                     }
                 });
-
             });
         }
 
