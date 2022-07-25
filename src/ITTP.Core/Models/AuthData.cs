@@ -14,7 +14,7 @@
         /// Указание - является ли пользователь админом
         /// </summary>
         public bool IsAdmin { get; set; }
-        
+
         /// <summary>
         /// Токен
         /// </summary>

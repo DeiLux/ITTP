@@ -20,7 +20,7 @@ namespace ITTP.Services.UserService
         {
             try
             {
-                if (!await _userRepositories.UserExistsAsync(user.Login))
+                if (!await _userRepositories.UserExistsAsync(user.Login!))
                 {
                     await _userRepositories.CreateUserAsync(user);
                     return true;

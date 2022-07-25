@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ITTP.Core.Exceptions
+﻿namespace ITTP.Core.Exceptions
 {
     /// <summary>
     /// Исключение при нахождении пользователя в бд

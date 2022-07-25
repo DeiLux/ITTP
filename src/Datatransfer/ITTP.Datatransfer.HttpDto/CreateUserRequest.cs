@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ITTP.Datatransfer.HttpDto
 {
@@ -11,21 +10,21 @@ namespace ITTP.Datatransfer.HttpDto
         /// </summary>
         [RegularExpression(@"[0-9A-Za-z]+", ErrorMessage = "Запрещены все символы кроме латинских букв и цифр")]
         [Required]
-        public string UserLogin { get; set; }
+        public string? UserLogin { get; set; }
 
         /// <summary>
         /// Пароль (запрещены все символы кроме латинских букв и цифр)
         /// </summary>
         [RegularExpression(@"[0-9A-Za-z]+", ErrorMessage = "Запрещены все символы кроме латинских букв и цифр")]
         [Required]
-        public string UserPassword { get; set; }
+        public string? UserPassword { get; set; }
 
         /// <summary>
         /// Имя (запрещены все символы кроме латинских и русских букв)
         /// </summary>
         [RegularExpression(@"[A-Za-zА-Яа-я]+", ErrorMessage = "Запрещены все символы кроме латинских и русских букв")]
         [Required]
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
 
         /// <summary>
         /// Пол 0 - женщина, 1 - мужчина, 2 - неизвестно

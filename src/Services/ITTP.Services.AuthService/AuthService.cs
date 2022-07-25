@@ -5,12 +5,9 @@ using ITTP.Core.Repositories;
 using ITTP.Core.Services;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ITTP.Services.AuthService
 {
@@ -42,7 +39,7 @@ namespace ITTP.Services.AuthService
 
                 string token = CreateJwt(storedUser);
 
-                return new AuthData(storedUser.Login, storedUser.IsAdmin, token);
+                return new AuthData(storedUser.Login!, storedUser.IsAdmin, token);
             }
             catch (AuthException ex)
             {
@@ -62,14 +59,14 @@ namespace ITTP.Services.AuthService
         {
             var claims = new List<Claim>
                 {
-                    new Claim(nameof(AuthData.Login), user.Login),
+                    new Claim(nameof(AuthData.Login), user.Login!),
                     new Claim(nameof(AuthData.IsAdmin), user.IsAdmin.ToString())
                 };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "Token", nameof(AuthData.Login), nameof(AuthData.IsAdmin));
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_authConfiguration.Key);
+            var key = Encoding.ASCII.GetBytes(_authConfiguration.Key!);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {

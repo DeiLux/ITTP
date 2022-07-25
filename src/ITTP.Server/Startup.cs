@@ -7,15 +7,9 @@ using ITTP.Services.AuthService;
 using ITTP.Services.AuthService.Configurations;
 using ITTP.Services.AuthService.Middlewares;
 using ITTP.Services.UserService;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
-using System;
-using System.Collections.Generic;
 
 namespace ITTP.Server
 {
@@ -34,7 +28,7 @@ namespace ITTP.Server
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IUserService, UserService>();
 
-            services.AddTransient<IAuthConfiguration>(serviceProvider => 
+            services.AddTransient<IAuthConfiguration>(serviceProvider =>
                 Configuration.GetSection("Security").Get<AuthConfiguration>());
             services.AddDbContext<NpgSqlContext>(options =>
                 options.UseNpgsql(Environment.GetEnvironmentVariable("DB_CONNECTION_STRING") ??
@@ -48,7 +42,7 @@ namespace ITTP.Server
                         AllowIntegerValues = false
                     });
                 });
-            
+
             services.AddSwaggerGenNewtonsoftSupport();
             services.AddSwaggerGen(c =>
             {
