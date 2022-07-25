@@ -1,7 +1,6 @@
 ﻿using ITTP.Database.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
 
 namespace ITTP.Database.Context.Configuration
 {

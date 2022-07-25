@@ -1,7 +1,5 @@
 ﻿using ITTP.Database.Context;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace ITTP.Server
 {

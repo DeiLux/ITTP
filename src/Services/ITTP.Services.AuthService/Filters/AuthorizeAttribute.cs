@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System;
 
 namespace ITTP.Services.AuthService.Filters
 {
@@ -18,7 +17,7 @@ namespace ITTP.Services.AuthService.Filters
 
         public void OnAuthorization(AuthorizationFilterContext filterContext)
         {
-            var user = (User)filterContext.HttpContext.Items[nameof(AuthData)];
+            var user = (User)filterContext.HttpContext.Items[nameof(AuthData)]!;
 
             if (user == null)
             {

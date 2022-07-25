@@ -1,6 +1,5 @@
 ﻿using ITTP.Core.Exceptions;
 using ITTP.Core.Models;
-using System.Threading.Tasks;
 
 namespace ITTP.Core.Services
 {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ITTP.Core.Models
+﻿namespace ITTP.Core.Models
 {
     /// <summary>
     /// Пользователь
@@ -15,17 +13,17 @@ namespace ITTP.Core.Models
         /// <summary>
         /// Уникальный Логин (запрещены все символы кроме латинских букв и цифр)
         /// </summary>
-        public string Login { get; set; }
+        public string? Login { get; set; }
 
         /// <summary>
         /// Пароль (запрещены все символы кроме латинских букв и цифр)
         /// </summary>
-        public string Password { get; set; }
+        public string? Password { get; set; }
 
         /// <summary>
         /// Имя (запрещены все символы кроме латинских и русских букв)
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Пол 0 - женщина, 1 - мужчина, 2 - неизвестно
@@ -50,7 +48,7 @@ namespace ITTP.Core.Models
         /// <summary>
         /// Логин Пользователя, от имени которого этот пользователь создан
         /// </summary>
-        public string CreatedBy { get; set; }
+        public string? CreatedBy { get; set; }
 
         /// <summary>
         /// Дата изменения пользователя
@@ -60,7 +58,7 @@ namespace ITTP.Core.Models
         /// <summary>
         /// Логин Пользователя, от имени которого этот пользователь изменён
         /// </summary>
-        public string ModifiedBy { get; set; }
+        public string? ModifiedBy { get; set; }
 
         /// <summary>
         /// Дата удаления пользователя
@@ -70,6 +68,6 @@ namespace ITTP.Core.Models
         /// <summary>
         /// Логин Пользователя, от имени которого этот пользователь удалён
         /// </summary>
-        public string RevokedBy { get; set; }
+        public string? RevokedBy { get; set; }
     }
 }

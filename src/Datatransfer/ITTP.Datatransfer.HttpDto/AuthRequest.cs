@@ -10,13 +10,13 @@ namespace ITTP.Datatransfer.HttpDto
         /// </summary>
         [RegularExpression(@"[0-9A-Za-z]+", ErrorMessage = "Запрещены все символы кроме латинских букв и цифр")]
         [Required]
-        public string Login { get; set; }
+        public string? Login { get; set; }
 
         /// <summary>
         /// Пароль (запрещены все символы кроме латинских букв и цифр)
         /// </summary>
         [RegularExpression(@"[0-9A-Za-z]+", ErrorMessage = "Запрещены все символы кроме латинских букв и цифр")]
         [Required]
-        public string Password { get; set; }
+        public string? Password { get; set; }
     }
 }
