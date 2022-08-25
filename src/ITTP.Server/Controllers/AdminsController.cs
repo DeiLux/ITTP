@@ -262,7 +262,7 @@ namespace ITTP.Server.Controllers
                     return BadRequest("Пользователь не изменен");
 
                 var userAdmin = (User)HttpContext.Items[nameof(AuthData)]!;
-                var user = await _userService.ReadUserLoginAsync(changeUserAdminRequest.UserLogin!);
+                var user = await _userService.ReadUserAsync(changeUserAdminRequest.UserLogin!);
                 if (user == null) return BadRequest("Пользователь не изменен");
 
                 if (changeUserAdminRequest.UserName != null) user.Name = changeUserAdminRequest.UserName;
@@ -313,7 +313,7 @@ namespace ITTP.Server.Controllers
             try
             {
                 var userAdmin = (User)HttpContext.Items[nameof(AuthData)]!;
-                var user = await _userService.ReadUserLoginAsync(login);
+                var user = await _userService.ReadUserAsync(login);
                 if (user == null) return BadRequest("Пользователь не изменен");
                 user.Password = password;
                 user.ModifiedBy = userAdmin.Login;
@@ -359,7 +359,7 @@ namespace ITTP.Server.Controllers
             try
             {
                 var userAdmin = (User)HttpContext.Items[nameof(AuthData)]!;
-                var user = await _userService.ReadUserLoginAsync(login);
+                var user = await _userService.ReadUserAsync(login);
                 if (user == null || user.IsAdmin) return BadRequest("Пользователь не изменен");
                 user.Login = loginNew;
                 user.ModifiedBy = userAdmin.Login;
@@ -428,7 +428,7 @@ namespace ITTP.Server.Controllers
         {
             try
             {
-                var user = await _userService.ReadUserLoginAsync(login);
+                var user = await _userService.ReadUserAsync(login);
                 if (user == null) return BadRequest($"Пользователь login \"{login}\" не найден");
 
                 return Ok(JsonSerializer.Serialize(new
@@ -539,7 +539,7 @@ namespace ITTP.Server.Controllers
             try
             {
                 var userAdmin = (User)HttpContext.Items[nameof(AuthData)]!;
-                var user = await _userService.ReadUserLoginAsync(login);
+                var user = await _userService.ReadUserAsync(login);
                 if (user == null) return BadRequest("Пользователь не удален");
                 user.RevokedBy = userAdmin.Login;
                 user.RevokedOn = DateTime.UtcNow;
@@ -580,7 +580,7 @@ namespace ITTP.Server.Controllers
             try
             {
                 var userAdmin = (User)HttpContext.Items[nameof(AuthData)]!;
-                var user = await _userService.ReadUserLoginAsync(login);
+                var user = await _userService.ReadUserAsync(login);
                 if (user == null) return BadRequest("Пользователь не восстановлен");
                 user.RevokedBy = null;
                 user.RevokedOn = null;

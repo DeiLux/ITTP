@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ITTP.Core\ITTP.Core.csproj" />
     <ProjectReference Include="..\ITTP.Database.Models\ITTP.Database.Models.csproj" />
   </ItemGroup>
 
