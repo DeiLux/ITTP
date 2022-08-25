@@ -23,7 +23,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITTP.Datatransfer.HttpDto",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Datatransfer", "Datatransfer", "{598B8E80-B052-4016-BE0D-8DBF7F06B7D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITTP.Services.AuthService", "Services\ITTP.Services.AuthService\ITTP.Services.AuthService.csproj", "{A781E08C-9AD9-4423-AB1C-9D4AFCE29DD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITTP.Services.AuthService", "Services\ITTP.Services.AuthService\ITTP.Services.AuthService.csproj", "{A781E08C-9AD9-4423-AB1C-9D4AFCE29DD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{33758C45-D553-41F6-83A7-4565C96C49EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D5D6310F-BD0C-40D2-80C2-B877BCD3C50A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITTP.Services.UserService.Tests", "Tests\Services\ITTP.Services.UserService.Tests\ITTP.Services.UserService.Tests.csproj", "{8A807FB9-3C5B-4F4E-B63D-3F5074E7EBDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +69,10 @@ Global
 		{A781E08C-9AD9-4423-AB1C-9D4AFCE29DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A781E08C-9AD9-4423-AB1C-9D4AFCE29DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A781E08C-9AD9-4423-AB1C-9D4AFCE29DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A807FB9-3C5B-4F4E-B63D-3F5074E7EBDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A807FB9-3C5B-4F4E-B63D-3F5074E7EBDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A807FB9-3C5B-4F4E-B63D-3F5074E7EBDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A807FB9-3C5B-4F4E-B63D-3F5074E7EBDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +84,8 @@ Global
 		{F568D907-30B9-4680-9B6C-DAC78A84F94C} = {6CFFE748-0A2A-4C7A-9309-ADE972103496}
 		{E2007ACD-E9DA-418F-AABE-D0483D7DD94A} = {598B8E80-B052-4016-BE0D-8DBF7F06B7D3}
 		{A781E08C-9AD9-4423-AB1C-9D4AFCE29DD0} = {6CFFE748-0A2A-4C7A-9309-ADE972103496}
+		{D5D6310F-BD0C-40D2-80C2-B877BCD3C50A} = {33758C45-D553-41F6-83A7-4565C96C49EC}
+		{8A807FB9-3C5B-4F4E-B63D-3F5074E7EBDA} = {D5D6310F-BD0C-40D2-80C2-B877BCD3C50A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E498C609-CEDE-4F47-ACED-77684D535F05}

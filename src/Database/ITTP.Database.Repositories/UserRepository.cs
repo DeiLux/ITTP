@@ -18,7 +18,7 @@ namespace ITTP.Database.Repositories
 
         public async Task CreateUserAsync(CoreModels.User user)
         {
-            await _dbContext.AddAsync(CoreToDbUserConverter.Convert(user)!);
+            await _dbContext.Users.AddAsync(CoreToDbUserConverter.Convert(user)!);
             await _dbContext.SaveChangesAsync();
         }
 
@@ -82,6 +82,7 @@ namespace ITTP.Database.Repositories
             return await _dbContext.Users
                 .AsNoTracking()
                 .Where(u => u.RevokedOn == null)
+                .OrderByDescending(u => u.CreatedOn)
                 .Select(data => CoreToDbUserConverter.ConvertBack(data)).ToListAsync();
         }
 

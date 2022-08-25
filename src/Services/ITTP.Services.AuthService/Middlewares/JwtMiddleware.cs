@@ -53,7 +53,7 @@ namespace ITTP.Services.AuthService.Middlewares
                 var jwtToken = (JwtSecurityToken)validatedToken;
                 var userLogin = jwtToken.Claims.First(claim => claim.Type == nameof(AuthData.Login)).Value;
 
-                context.Items[nameof(AuthData)] = await userService.ReadUserLoginAsync(userLogin);
+                context.Items[nameof(AuthData)] = await userService.ReadUserAsync(userLogin);
             }
             catch
             {

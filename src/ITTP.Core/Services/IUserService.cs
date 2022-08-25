@@ -32,7 +32,7 @@ namespace ITTP.Core.Services
         /// </summary>
         /// <param name="login">Уникальный Логин (запрещены все символы кроме латинских букв и цифр)</param>
         /// <returns>User кор модель</returns>
-        public Task<User?> ReadUserLoginAsync(string login);
+        public Task<User?> ReadUserAsync(string login);
 
         /// <summary>
         /// Запрос пользователя по логину и паролю 

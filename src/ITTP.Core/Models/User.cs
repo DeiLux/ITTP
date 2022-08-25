@@ -69,5 +69,28 @@
         /// Логин Пользователя, от имени которого этот пользователь удалён
         /// </summary>
         public string? RevokedBy { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is User user)
+            {
+                return Guid == user.Guid && 
+                    Login == user.Login && 
+                    Password == user.Password && 
+                    Name == user.Name &&
+                    Gender == user.Gender &&
+                    Birthday == user.Birthday &&
+                    IsAdmin == user.IsAdmin &&
+                    CreatedOn == user.CreatedOn &&
+                    CreatedBy == user.CreatedBy &&
+                    ModifiedOn == user.ModifiedOn &&
+                    ModifiedBy == user.ModifiedBy &&
+                    RevokedOn == user.RevokedOn &&
+                    RevokedBy == user.RevokedBy;
+            }
+            return false;
+        }
+
+        public override int GetHashCode() => Guid.GetHashCode();
     }
 }

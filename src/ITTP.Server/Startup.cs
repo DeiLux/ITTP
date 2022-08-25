@@ -33,7 +33,6 @@ namespace ITTP.Server
             services.AddDbContext<NpgSqlContext>(options =>
                 options.UseNpgsql(Environment.GetEnvironmentVariable("DB_CONNECTION_STRING") ??
                 Configuration.GetConnectionString("DefaultConnection")));
-
             services.AddControllers()
                 .AddNewtonsoftJson(options =>
                 {
