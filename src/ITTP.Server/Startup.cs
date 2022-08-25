@@ -7,15 +7,9 @@ using ITTP.Services.AuthService;
 using ITTP.Services.AuthService.Configurations;
 using ITTP.Services.AuthService.Middlewares;
 using ITTP.Services.UserService;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
-using System;
-using System.Collections.Generic;
 
 namespace ITTP.Server
 {
@@ -34,9 +28,11 @@ namespace ITTP.Server
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IUserService, UserService>();
 
-            var authSection = Configuration.GetSection("Security").Get<AuthConfiguration>();
-            services.AddTransient<IAuthConfiguration>(serviceProvider => authSection);
-
+            services.AddTransient<IAuthConfiguration>(serviceProvider =>
+                Configuration.GetSection("Security").Get<AuthConfiguration>());
+            services.AddDbContext<NpgSqlContext>(options =>
+                options.UseNpgsql(Environment.GetEnvironmentVariable("DB_CONNECTION_STRING") ??
+                Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers()
                 .AddNewtonsoftJson(options =>
                 {
@@ -47,12 +43,6 @@ namespace ITTP.Server
                 });
 
             services.AddSwaggerGenNewtonsoftSupport();
-
-            services.AddControllers();
-            services.AddDbContext<NpgSqlContext>(options =>
-                options.UseNpgsql(Environment.GetEnvironmentVariable("DB_CONNECTION_STRING") ??
-                Configuration.GetConnectionString("DefaultConnection")));
-
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -78,7 +68,6 @@ namespace ITTP.Server
                         }, new List<string>()
                     }
                 });
-
             });
         }
 

@@ -5,6 +5,6 @@
     /// </summary>
     public interface IAuthConfiguration
     {
-        string Key { get; set; }
+        string? Key { get; set; }
     }
 }

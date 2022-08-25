@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ITTP.Database.Context
 {
+#nullable disable
     public class NpgSqlContext : DbContext
     {
         public DbSet<User> Users { get; set; }
@@ -16,4 +17,5 @@ namespace ITTP.Database.Context
             modelBuilder.ApplyConfiguration(new UserConfiguration());
         }
     }
+#nullable restore
 }

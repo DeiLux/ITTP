@@ -1,7 +1,4 @@
 ﻿using ITTP.Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ITTP.Core.Repositories
 {

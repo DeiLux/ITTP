@@ -3,10 +3,7 @@ using ITTP.Core.Models;
 using ITTP.Core.Services;
 using ITTP.Datatransfer.HttpDto;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Annotations;
-using System;
-using System.Threading.Tasks;
 
 namespace ITTP.Server.Controllers
 {
@@ -40,7 +37,7 @@ namespace ITTP.Server.Controllers
         {
             try
             {
-                var token = await _authService.CreateTokenAsync(authRequest.Login, authRequest.Password);
+                var token = await _authService.CreateTokenAsync(authRequest.Login!, authRequest.Password!);
 
                 return Ok(token);
             }

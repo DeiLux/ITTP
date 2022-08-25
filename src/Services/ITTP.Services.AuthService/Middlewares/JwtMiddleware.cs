@@ -4,11 +4,8 @@ using ITTP.Core.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using System;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ITTP.Services.AuthService.Middlewares
 {
@@ -42,7 +39,7 @@ namespace ITTP.Services.AuthService.Middlewares
             try
             {
                 var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.ASCII.GetBytes(_authConfiguration.Key);
+                var key = Encoding.ASCII.GetBytes(_authConfiguration.Key!);
                 tokenHandler.ValidateToken(token, new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
@@ -56,7 +53,7 @@ namespace ITTP.Services.AuthService.Middlewares
                 var jwtToken = (JwtSecurityToken)validatedToken;
                 var userLogin = jwtToken.Claims.First(claim => claim.Type == nameof(AuthData.Login)).Value;
 
-                context.Items[nameof(AuthData)] = await userService.ReadUserLoginAsync(userLogin);
+                context.Items[nameof(AuthData)] = await userService.ReadUserAsync(userLogin);
             }
             catch
             {

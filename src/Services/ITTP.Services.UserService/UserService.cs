@@ -20,7 +20,7 @@ namespace ITTP.Services.UserService
         {
             try
             {
-                if (!await _userRepositories.UserExistsAsync(user.Login))
+                if (!await _userRepositories.UserExistsAsync(user.Login!))
                 {
                     await _userRepositories.CreateUserAsync(user);
                     return true;
@@ -88,7 +88,7 @@ namespace ITTP.Services.UserService
             return null;
         }
 
-        public async Task<User?> ReadUserLoginAsync(string login)
+        public async Task<User?> ReadUserAsync(string login)
         {
             try
             {
@@ -98,7 +98,7 @@ namespace ITTP.Services.UserService
             {
                 _logger.LogError(ex, "Error in Service: {ServiceName} in Method: {MethodName},",
                     nameof(UserService),
-                    nameof(ReadUserLoginAsync));
+                    nameof(ReadUserAsync));
             }
 
             return null;
